@@ -21,10 +21,10 @@ openstack flavor create \
 # openstack overcloud node import --introspect --provide instackenv.json
 openstack baremetal node set \
   --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-0
-openstack baremetal node set \
-  --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-1
-openstack baremetal node set \
-  --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-2
+# openstack baremetal node set \
+#  --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-1
+# openstack baremetal node set \
+#  --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-2
 
 openstack baremetal node set \
   --property capabilities='profile:compute-leaf2,boot_option:local' baremetal-leaf2-0

@@ -1,7 +1,7 @@
 parameter_defaults:
 
   # Controller
-  ControllerCount: 3
+  ControllerCount: 1
   OvercloudControlFlavor: control-leaf1
   ControllerControlPlaneSubnet: ctlplane-leaf1
 
