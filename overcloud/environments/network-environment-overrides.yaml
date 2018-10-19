@@ -14,7 +14,7 @@ parameter_defaults:
 resource_registry:
     #--------------------------------------------------------------------------
     # Controller Nodes
-    OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/tripleo-heat-templates/network/config/multiple-nics/control.yaml
+    OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/tripleo-heat-templates/network/config/multiple-nics/controller.yaml
     #--------------------------------------------------------------------------
     # Compute Nodes
     OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
