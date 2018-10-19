@@ -3,7 +3,7 @@ source /home/stack/stackrc
 openstack flavor create \
   --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 \
   --property capabilities:boot_option='local' \
-  --property capabilities:profile='compute-leaf1' \
+  --property capabilities:profile='control-leaf1' \
   --property resources:CUSTOM_BAREMETAL='1' \
   --property resources:DISK_GB='0' \
   --property resources:MEMORY_MB='0' \
@@ -12,7 +12,7 @@ openstack flavor create \
 openstack flavor create \
   --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 \
   --property capabilities:boot_option='local' \
-  --property capabilities:profile='compute-leaf1' \
+  --property capabilities:profile='compute-leaf2' \
   --property resources:CUSTOM_BAREMETAL='1' \
   --property resources:DISK_GB='0' \
   --property resources:MEMORY_MB='0' \
