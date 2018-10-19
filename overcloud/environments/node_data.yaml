@@ -1,19 +1,12 @@
 parameter_defaults:
 
   # Controller
-  ControllerCount: 1
-  OvercloudControlFlavor: control
-  ControllerControlPlaneSubnet: ctlplane-subnet
+  ControllerCount: 3
+  OvercloudControlFlavor: control-leaf1
+  ControllerControlPlaneSubnet: ctlplane-leaf1
 
   # Compute
-  ComputeLeaf0Count: 1
-  ComputeLeaf0ControlPlaneSubnet: ctlplane-subnet
-  OvercloudComputeLeaf0Flavor: compute-leaf0
+  ComputeCount: 2
+  OvercloudComputeFlavor: compute-leaf2
+  ComputeControlPlaneSubnet: ctlplane-leaf2
 
-  ComputeLeaf1Count: 1
-  ComputeLeaf1ControlPlaneSubnet: leaf1
-  OvercloudComputeLeaf1Flavor: compute-leaf1
-  ComputeLeaf1ExtraConfig:
-    neutron::agents::ml2::ovs::local_ip: "%{hiera('tenant1')}"
-
-  NtpServer: ["0.se.pool.ntp.org", "1.se.pool.ntp.org"]

@@ -3,21 +3,7 @@ parameter_defaults:
     # Control Plane subnet is used to get the VIPs,
     #    VIPs need to be on same network as controllers.
     # -------------------------------------------------------------------------
-    ControlPlaneSubnet: ctlplane-subnet
-
-    # -------------------------------------------------------------------------
-    # Supernets
-    # -------------------------------------------------------------------------
-    # These are Supernet CIDR's used in the routing tables.
-    # Supernets allow a single routing table entry for multiple
-    # adjecent networks.
-    # -------------------------------------------------------------------------
-    ExternalSupernet: 172.20.2.0/26
-    InternalApiSupernet: 172.20.1.0/24
-    StorageSupernet: 172.20.3.0/24
-    StorageMgmtSupernet: 172.20.4.0/24
-    TenantSupernet: 172.20.5.0/24
-    CtlplaneSupernet: 172.20.0.0/24
+    ControlPlaneSubnet: ctlplane-leaf1
 
     NeutronBridgeMappings: datacentre:br-ex,tenant:br-isolated
     NeutronExternalNetworkBridge: ''
@@ -28,9 +14,8 @@ parameter_defaults:
 resource_registry:
     #--------------------------------------------------------------------------
     # Controller Nodes
-    OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/templates/nic-config/control.yaml
+    OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/tripleo-heat-templates/network/config/multiple-nics/control.yaml
     #--------------------------------------------------------------------------
     # Compute Nodes
-    OS::TripleO::ComputeLeaf0::Net::SoftwareConfig: /home/stack/templates/nic-config/compute0.yaml
-    OS::TripleO::ComputeLeaf1::Net::SoftwareConfig: /home/stack/templates/nic-config/compute1.yaml
+    OS::TripleO::Compute::Net::SoftwareConfig: /home/stack/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
 

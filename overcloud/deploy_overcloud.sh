@@ -10,6 +10,5 @@ openstack overcloud deploy --templates /home/stack/tripleo-heat-templates \
   -e /home/stack/tripleo-heat-templates/environments/network-isolation.yaml \
   -e /home/stack/tripleo-heat-templates/environments/low-memory-usage.yaml \
   -e /home/stack/tripleo-heat-templates/environments/network-environment.yaml \
-  -e /home/stack/overcloud/environments/network-environment-overrides.yaml \
-  -e /home/stack/overcloud/environments/docker_registry.yaml 
+  -e /home/stack/overcloud/environments/network-environment-overrides.yaml 
 
