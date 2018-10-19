@@ -1,0 +1,9 @@
+source /home/stack/stackrc
+
+openstack flavor create --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 --property capabilities:boot_option='local' --property capabilities:profile='compute-leaf0' --property resources:CUSTOM_BAREMETAL='1' --property resources:DISK_GB='0' --property resources:MEMORY_MB='0' --property resources:VCPU='0' compute-leaf0
+  openstack flavor create --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 --property capabilities:boot_option='local' --property capabilities:profile='compute-leaf1' --property resources:CUSTOM_BAREMETAL='1' --property resources:DISK_GB='0' --property resources:MEMORY_MB='0' --property resources:VCPU='0' compute-leaf1
+
+# openstack overcloud node import --introspect --provide instackenv.json
+openstack baremetal node set --property capabilities='profile:control,boot_option:local' os-ctl0
+openstack baremetal node set --property capabilities='profile:compute-leaf0,boot_option:local' os-leaf0-cmp0
+openstack baremetal node set --property capabilities='profile:compute-leaf1,boot_option:local' os-leaf1-cmp0
