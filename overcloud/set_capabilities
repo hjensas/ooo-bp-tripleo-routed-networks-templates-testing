@@ -8,7 +8,7 @@ openstack flavor create \
   --property resources:DISK_GB='0' \
   --property resources:MEMORY_MB='0' \
   --property resources:VCPU='0' control-leaf1
-
+ 
 openstack flavor create \
   --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 \
   --property capabilities:boot_option='local' \
@@ -18,7 +18,6 @@ openstack flavor create \
   --property resources:MEMORY_MB='0' \
   --property resources:VCPU='0' compute-leaf2
 
-# openstack overcloud node import --introspect --provide instackenv.json
 openstack baremetal node set \
   --property capabilities='profile:control-leaf1,boot_option:local' baremetal-leaf1-0
 # openstack baremetal node set \
