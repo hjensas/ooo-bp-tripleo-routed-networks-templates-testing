@@ -11,3 +11,9 @@
 ./bin/build-nodes-json \
 	--env env-routed-lab.yaml \
 	--physical_network
+
+echo "###############################"
+echo -n "## Undercloud floating IP: "
+echo -e "\t$(openstack stack show quintupleo -f json -c outputs | jq '.outputs[0].output_value')"
+echo "###############################"
+
