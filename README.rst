@@ -89,7 +89,7 @@ Clone git repos, and checkout patch
 
   git clone git://git.openstack.org/openstack/tripleo-heat-templates
   cd /home/stack/tripleo-heat-templates
-  git fetch https://git.openstack.org/openstack/tripleo-heat-templates refs/changes/01/582301/28 && git checkout FETCH_HEAD
+  git fetch https://git.openstack.org/openstack/tripleo-heat-templates refs/changes/59/613459/1 && git checkout FETCH_HEAD
   cd /home/stack
 
 
