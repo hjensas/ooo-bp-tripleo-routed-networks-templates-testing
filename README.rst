@@ -1,6 +1,8 @@
-# ooo-bp-tripleo-routed-networks-templates-testing
+ooo-bp-tripleo-routed-networks-templates-testing
+================================================
 
-## Set up OVB environment
+Set up OVB environment
+----------------------
 
 ::
 
@@ -17,7 +19,8 @@
   git clone https://github.com/hjensas/ooo-bp-tripleo-routed-networks-templates-testing.git
   cp ./ooo-bp-tripleo-routed-networks-templates-testing/ovb/* ./openstack-virtual-baremetal/
 
-## Set up OVB routed-networks lab
+Set up OVB routed-networks lab
+------------------------------
 
 .. NOTE:: Source the cloud RC file first ...
 
@@ -27,19 +30,22 @@
   bash ~/ovb-lab/openstack-virtual-baremetal/deploy_ovb.sh
 
 
-## copy nodes.json to undercloud
+Copy nodes.json to undercloud
+-----------------------------
 
 ::
 
   scp ~/ovb-lab/openstack-virtual-baremetal/nodes.json centos@<ovb-undercloud-floating-ip>:
 
-## Log into OVB lab undercloud node
+Log into OVB lab undercloud node
+--------------------------------
 
 ::
 
   ssh centos@<ovb-undercloud-floating-ip>
 
-## Set up some swapspace
+Set up some swap on the undercloud
+----------------------------------
 
 ::
 
@@ -48,7 +54,8 @@
   sudo swapon /opt/8GB.swap
 
 
-## Update and install python-tripleoclient
+Update and install python-tripleoclient
+---------------------------------------
 
 ::
 
@@ -59,7 +66,8 @@
   sudo yum install python-tripleoclient -y
 
 
-## Create stack user
+Create stack user
+-----------------
 
 ::
 
@@ -69,7 +77,8 @@
   sudo su - stack
 
 
-## Clone git repos, and checkout patch
+Clone git repos, and checkout patch
+-----------------------------------
 
 ::
 
@@ -84,7 +93,8 @@
   cd /home/stack
 
 
-## Build images
+Build images
+------------
 
 ::
 
@@ -96,13 +106,15 @@
   cd /home/stack
 
 
-## Install undercloud
+Install undercloud
+------------------
 
 ::
 
   openstack undercloud install
 
-## Upload images
+Upload overcloud images
+-----------------------
 
 ::
 
@@ -113,7 +125,8 @@
 
 
 
-## Import nodes, Introspect nodes, Provide nodes
+Import nodes, Introspect nodes, Provide nodes
+---------------------------------------------
 
 ::
 
@@ -122,14 +135,17 @@
   openstack overcloud node introspect --all-manageable
   openstack overcloud node provide --all-manageable
 
-## Create flavors and set capabilities
+Create flavors and set capabilities
+-----------------------------------
 
 ::
 
   bash /home/stack/overcloud/set_capabilities
 
-## Deploy the overcloud
+Deploy the overcloud
+--------------------
 
+::
 
   bash /home/stack/overcloud/deploy_overcloud.sh
 
