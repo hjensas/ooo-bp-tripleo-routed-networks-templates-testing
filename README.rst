@@ -22,7 +22,7 @@ Set up OVB environment
 Set up OVB routed-networks lab
 ------------------------------
 
-.. NOTE: Source the cloud RC file first ...
+.. NOTE:: Source the cloud RC file first
 
 ::
 
