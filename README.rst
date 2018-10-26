@@ -86,6 +86,7 @@ Clone git repos, and checkout patch
   git clone https://github.com/hjensas/ooo-bp-tripleo-routed-networks-templates-testing.git
   ln -s /home/stack/ooo-bp-tripleo-routed-networks-templates-testing/overcloud /home/stack/overcloud
   ln -s /home/stack/ooo-bp-tripleo-routed-networks-templates-testing/undercloud.conf /home/stack/undercloud.conf
+  ln -s /home/stack/ooo-bp-tripleo-routed-networks-templates-testing/containers-prepare-parameter.yaml /home/stack/containers-prepare-parameter.yaml
 
   git clone git://git.openstack.org/openstack/tripleo-heat-templates
   cd /home/stack/tripleo-heat-templates
