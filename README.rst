@@ -89,7 +89,13 @@ Clone git repos, and checkout patch
 
   git clone git://git.openstack.org/openstack/tripleo-heat-templates
   cd /home/stack/tripleo-heat-templates
-  git fetch https://git.openstack.org/openstack/tripleo-heat-templates refs/changes/59/613459/1 && git checkout FETCH_HEAD
+  git fetch https://git.openstack.org/openstack/tripleo-heat-templates refs/changes/59/613459/3 && git checkout FETCH_HEAD
+  cd /home/stack
+  git clone git://git.openstack.org/openstack/python-tripleoclient
+  cd /home/stack/python-tripleoclient
+  git fetch https://git.openstack.org/openstack/python-tripleoclient refs/changes/87/613487/1 && git checkout FETCH_HEAD
+  # !! Manually patch tripleoclient ... Remove once changes merge.
+  sudo cp tripleoclient/v1/tripleo_deploy.py /usr/lib/python2.7/site-packages/tripleoclient/v1/tripleo_deploy.py
   cd /home/stack
 
 
