@@ -73,19 +73,19 @@
     shell:
       openstack undercloud install
   - name: Upload overcloud images
-    shell:
+    shell: |
       source {{ ansible_env.HOME }}/stackrc
       cd {{ ansible_env.HOME }}/images
       openstack overcloud image upload
   - name: Import nodes
-    shell:
+    shell: |
       source {{ ansible_env.HOME }}/stackrc
       openstack overcloud node import instackenv.json
   - name: Introspect and provice nodes
-    shell:
+    shell: |
       source {{ ansible_env.HOME }}/stackrc
       openstack overcloud node introspect --all-manageable --provide
   - name: Create flavors and set capabilities
-    shell:
+    shell: |
       source {{ ansible_env.HOME }}/stackrc
       bash {{ ansible_env.HOME }}/overcloud/set_capabilities
