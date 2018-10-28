@@ -2,10 +2,10 @@
   tasks:
   - name: Set up some swap space
     become: yes
-    shell:
-      sudo dd if=/dev/zero of=/opt/8GB.swap bs=8192 count=1048576
-      sudo mkswap /opt/8GB.swap
-      sudo swapon /opt/8GB.swap
+    shell: |
+      dd if=/dev/zero of=/opt/8GB.swap bs=8192 count=1048576
+      mkswap /opt/8GB.swap
+      swapon /opt/8GB.swap
       echo "/opt/8GB.swap swap                                    swap    defaults 0 0" >> /etc/fstab
   - name: Install tripleo repos rpm
     become: yes

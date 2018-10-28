@@ -18,7 +18,7 @@ cat << EOF > inventory.ini
 $OVB_UNDERCLOUD ansible_user=centos
 EOF
 
-scp nodes.json centos@$OVB_UNDERCLOUD:~/instackenv.json
+scp -o StrictHostKeyChecking=no nodes.json centos@$OVB_UNDERCLOUD:~/instackenv.json
 
 DEPLOY_UNDERCLOUD="ansible-playbook -i inventory.ini ../ooo-bp-tripleo-routed-networks-templates-testing/playbooks/deploy_undercloud.yaml"
 DEPLOY_OVERCLOUD="Log into undercloud ($OVB_UNDERCLOUD) and run command: bash ~/overcloud/deploy_overcloud.sh"
