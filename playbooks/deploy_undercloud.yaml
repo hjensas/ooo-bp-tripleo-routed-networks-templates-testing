@@ -60,9 +60,12 @@
       - overcloud
       - undercloud.conf
       - containers-prepare-parameter.yaml
+  - name: Create images directory
+    file:
+      dest: "{{ ansible_env.HOME }}/images"
+      state: directory
   - name: Build Images
-    shell:
-      mkdir {{ ansible_env.HOME }}/images
+    shell: |
       cd {{ ansible_env.HOME }}/images
       export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
       openstack overcloud image build
