@@ -12,8 +12,19 @@
 	--env env-routed-lab.yaml \
 	--physical_network
 
-echo "###############################"
-echo -n "## Undercloud floating IP: "
-echo -e "\t$(openstack stack show quintupleo -f json -c outputs | jq '.outputs[0].output_value')"
-echo "###############################"
+OVB_UNDERCLOUD=$(openstack stack show quintupleo -f json -c outputs | jq '.outputs[0].output_value' | sed s/'"'//g)
+cat << EOF > inventory.ini
+[undercloud]
+$OVB_UNDERCLOUD ansible_user=centos
+EOF
+
+scp nodes.json centos@$OVB_UNDERCLOUD:~/instackenv.json
+
+DEPLOY_UNDERCLOUD="ansible-playbook -i inventory.ini ../ooo-bp-tripleo-routed-networks-templates-testing/playbooks/deploy_undercloud.yaml"
+DEPLOY_OVERCLOUD="Log into undercloud ($OVB_UNDERCLOUD) and run command: bash ~/overcloud/deploy_overcloud.sh"
+echo "###############################################"
+echo -e "Undercloud floating IP:\n\t$OVB_UNDERCLOUD"
+echo -e "Deploy undercloud:\n\t$DEPLOY_UNDERCLOUD"
+echo -e "Deploy overcloud:\n\t$DEPLOY_OVERCLOUD"
+echo "###############################################"
 

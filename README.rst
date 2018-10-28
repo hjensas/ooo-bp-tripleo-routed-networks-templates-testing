@@ -16,6 +16,7 @@ Set up OVB environment
   cd ~/ovb-lab
   pip install openstack-virtual-baremetal
   pip install python-openstackclient
+  pip install ansible
   git clone https://github.com/hjensas/ooo-bp-tripleo-routed-networks-templates-testing.git
   cp ./ooo-bp-tripleo-routed-networks-templates-testing/ovb/* ./openstack-virtual-baremetal/
 
@@ -28,14 +29,6 @@ Set up OVB routed-networks lab
 
   cd ~/ovb-lab/openstack-virtual-baremetal/
   bash ~/ovb-lab/openstack-virtual-baremetal/deploy_ovb.sh
-
-
-Copy nodes.json to undercloud
------------------------------
-
-::
-
-  scp ~/ovb-lab/openstack-virtual-baremetal/nodes.json centos@<ovb-undercloud-floating-ip>:
 
 Log into OVB lab undercloud node
 --------------------------------
