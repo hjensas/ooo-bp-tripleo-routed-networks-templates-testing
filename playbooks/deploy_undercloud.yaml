@@ -53,8 +53,8 @@
       cp {{ ansible_env.HOME }}/python-tripleoclient/tripleoclient/v1/tripleo_deploy.py /usr/lib/python2.7/site-packages/tripleoclient/v1/tripleo_deploy.py
   - name: Create symlinks
     file:
-      src: {{ ansible_env.HOME }}/ooo-bp-tripleo-routed-networks-templates-testing/{{ item }}
-      dst: {{ ansible_env.HOME }}/{{ item }}
+      src: "{{ ansible_env.HOME }}/ooo-bp-tripleo-routed-networks-templates-testing/{{ item }}"
+      dest: "{{ ansible_env.HOME }}/{{ item }}"
       state: link
     with_items:
       - overcloud
