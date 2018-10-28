@@ -1,13 +1,13 @@
 #!/bin/bash
 
-source /home/stack/stackrc
-cd /home/stack
+source /home/centos/stackrc
+cd /home/centos
 
-openstack overcloud deploy --templates /home/stack/tripleo-heat-templates \
-  -n /home/stack/overcloud/templates/network_data_subnets_routed.yaml \
-  -r /home/stack/overcloud/templates/my_roles_data.yaml \
-  -e /home/stack/overcloud/environments/node_data.yaml \
-  -e /home/stack/tripleo-heat-templates/environments/network-isolation.yaml \
-  -e /home/stack/tripleo-heat-templates/environments/network-environment.yaml \
-  -e /home/stack/overcloud/environments/network-environment-overrides.yaml 
+openstack overcloud deploy --templates /home/centos/tripleo-heat-templates \
+  -n /home/centos/overcloud/templates/network_data_subnets_routed.yaml \
+  -r /home/centos/overcloud/templates/my_roles_data.yaml \
+  -e /home/centos/overcloud/environments/node_data.yaml \
+  -e /home/centos/tripleo-heat-templates/environments/network-isolation.yaml \
+  -e /home/centos/tripleo-heat-templates/environments/network-environment.yaml \
+  -e /home/centos/overcloud/environments/network-environment-overrides.yaml 
 
