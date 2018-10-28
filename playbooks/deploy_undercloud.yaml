@@ -81,11 +81,11 @@
     shell: |
       source {{ ansible_env.HOME }}/stackrc
       openstack overcloud node import instackenv.json
-  - name: Introspect and provice nodes
+  - name: Introspect and provide nodes
     shell: |
       source {{ ansible_env.HOME }}/stackrc
       openstack overcloud node introspect --all-manageable --provide
-  - name: Create flavors and set capabilities
+  - name: Create flavors and set node capabilities
     shell: |
       source {{ ansible_env.HOME }}/stackrc
       bash {{ ansible_env.HOME }}/overcloud/set_capabilities
