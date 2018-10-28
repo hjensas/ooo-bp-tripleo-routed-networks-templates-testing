@@ -15,6 +15,7 @@
       name: '*'
       state: latest
   - name: Install packages
+    become: yes
     yum:
       name: "{{ packages }}"
     vars:
