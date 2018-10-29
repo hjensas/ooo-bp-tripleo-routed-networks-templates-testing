@@ -47,7 +47,7 @@ Run ansible playbook to deploy the undercloud
 Deploy the overcloud
 --------------------
 
-::
+Log into the ovb undercloud node, user: centos. Then run the following command::
 
   bash /home/stack/overcloud/deploy_overcloud.sh
 
