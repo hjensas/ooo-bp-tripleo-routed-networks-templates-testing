@@ -23,6 +23,12 @@ Set up OVB environment
 Set up OVB routed-networks lab
 ------------------------------
 
+The OVB environment files expect:
+ - A pre-existing private network to be available in the tenant.
+   This network also need to be connected to a router with a connection
+   to the external network.
+ - A key, key_name: default must exist
+
   .. NOTE:: Source the cloud RC file first
 
 ::
