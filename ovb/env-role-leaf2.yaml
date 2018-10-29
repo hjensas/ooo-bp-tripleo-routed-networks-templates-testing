@@ -3,7 +3,7 @@ parameter_defaults:
   key_name: default
   node_count: 2
   role: leaf2
-  provision_net: ctlplane-leaf
+  provision_net: ctlplane-leaf2
   overcloud_internal_net: overcloud_internal2
   overcloud_storage_net: overcloud_storage2
   overcloud_storage_mgmt_net: overcloud_storage_mgmt2
