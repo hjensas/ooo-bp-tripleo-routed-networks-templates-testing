@@ -15,7 +15,7 @@
 OVB_UNDERCLOUD=$(openstack stack show quintupleo -f json -c outputs | jq '.outputs[0].output_value' | sed s/'"'//g)
 cat << EOF > inventory.ini
 [undercloud]
-$OVB_UNDERCLOUD ansible_user=centos
+$OVB_UNDERCLOUD ansible_user=centos ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
 EOF
 
 scp -o StrictHostKeyChecking=no nodes.json centos@$OVB_UNDERCLOUD:~/instackenv.json
