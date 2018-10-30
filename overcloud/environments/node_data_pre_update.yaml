@@ -11,5 +11,5 @@ parameter_defaults:
   ComputeControlPlaneSubnet: ctlplane-leaf1
 
   # ROLE: Compute-Leaf1
-  Compute-Leaf1: 0
+  Compute-Leaf1Count: 0
 
