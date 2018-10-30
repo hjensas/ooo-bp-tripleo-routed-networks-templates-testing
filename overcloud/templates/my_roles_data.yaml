@@ -198,11 +198,11 @@
   CountDefault: 1
   networks:
     InternalApi:
-      subnet: internal_api_leaf
+      subnet: internal_api_subnet
     Tenant:
-      subnet: tenant_leaf
+      subnet: tenant_subnet
     Storage:
-      subnet: storage_leaf
+      subnet: storage_subnet
   HostnameFormatDefault: '%stackname%-novacompute-%index%'
   RoleParametersDefault:
     TunedProfileName: "virtual-host"
