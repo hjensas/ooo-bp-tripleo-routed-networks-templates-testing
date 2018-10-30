@@ -7,18 +7,14 @@ Set up OVB environment
 ::
 
   mkdir ~/ovb-lab
-  cd ~/ovb-lab
-  virtualenv `pwd`
-  source ./bin/activate
-  git clone https://github.com/hjensas/openstack-virtual-baremetal.git
-  cd ~/ovb-lab/openstack-virtual-baremetal/
-  git checkout routed-networks
-  cd ~/ovb-lab
-  pip install openstack-virtual-baremetal
+  virtualenv ~/ovb-lab
+  source ~/ovb-lab/bin/activate
+  git clone https://github.com/cybertron/openstack-virtual-baremetal.git ~/ovb-lab/openstack-virtual-baremetal --branch routed-networks
+  pip install ~/ovb-lab/openstack-virtual-baremetal
   pip install python-openstackclient
   pip install ansible
-  git clone https://github.com/hjensas/ooo-bp-tripleo-routed-networks-templates-testing.git
-  cp ./ooo-bp-tripleo-routed-networks-templates-testing/ovb/* ./openstack-virtual-baremetal/
+  git clone https://github.com/hjensas/ooo-bp-tripleo-routed-networks-templates-testing.git ~/ovb-lab/ooo-bp-tripleo-routed-networks-templates-testing
+  cp ~/ovb-lab/ooo-bp-tripleo-routed-networks-templates-testing/ovb/* ~/ovb-lab/openstack-virtual-baremetal/
 
 Set up OVB routed-networks lab
 ------------------------------
@@ -48,13 +44,17 @@ Run ansible playbook to deploy the undercloud
 
 ::
 
-  ansible-playbook -i inventory.ini ../ooo-bp-tripleo-routed-networks-templates-testing/playbooks/deploy_undercloud.yaml
+  ansible-playbook -i inventory.ini ~/ovb-lab/ooo-bp-tripleo-routed-networks-templates-testing/playbooks/deploy_undercloud.yaml
 
 Deploy the overcloud
 --------------------
 
-Log into the ovb undercloud node, user: centos. Then run the following command::
+Log into the ovb undercloud node, user: centos.
+
+To deploy without routed networks first::
+
+  bash /home/stack/overcloud/deploy_overcloud_pre_update.sh
+
+Deploy (or update) with routed networks::
 
   bash /home/stack/overcloud/deploy_overcloud.sh
-
-
