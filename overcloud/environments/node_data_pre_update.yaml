@@ -6,7 +6,7 @@ parameter_defaults:
   ControllerControlPlaneSubnet: ctlplane-leaf1
 
   # Compute
-  ComputeCount: 0
-  OvercloudComputeFlavor: compute-leaf2
-  ComputeControlPlaneSubnet: ctlplane-leaf2
+  ComputeCount: 1
+  OvercloudComputeFlavor: compute-leaf1
+  ComputeControlPlaneSubnet: ctlplane-leaf1
 
