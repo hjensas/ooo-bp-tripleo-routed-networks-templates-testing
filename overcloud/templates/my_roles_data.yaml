@@ -265,7 +265,7 @@
 ###############################################################################
 # Role: Compute-Leaf1                                                         #
 ###############################################################################
-- name: Compute-Leaf1
+- name: ComputeLeaf1
   description: |
     Basic Compute Node role for Leaf1
   CountDefault: 1

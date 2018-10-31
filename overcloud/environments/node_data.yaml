@@ -11,7 +11,7 @@ parameter_defaults:
   ComputeControlPlaneSubnet: ctlplane-leaf1
 
   # Compute-Leaf1
-  Compute-Leaf1Count: 2
-  OvercloudCompute-Leaf1Flavor: compute-leaf2
-  Compute-Leaf1ControlPlaneSubnet: ctlplane-leaf2
+  ComputeLeaf1Count: 2
+  OvercloudComputeLeaf1Flavor: compute-leaf2
+  ComputeLeaf1ControlPlaneSubnet: ctlplane-leaf2
 
