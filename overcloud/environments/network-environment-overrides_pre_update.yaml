@@ -17,5 +17,5 @@ resource_registry:
     # Controller Nodes
     OS::TripleO::Controller::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/controller.yaml
     # Compute Nodes
-    #OS::TripleO::Compute::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
+    OS::TripleO::Compute::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
 
