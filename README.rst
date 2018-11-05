@@ -53,8 +53,8 @@ Log into the ovb undercloud node, user: centos.
 
 To deploy without routed networks first::
 
-  bash /home/stack/overcloud/deploy_overcloud_pre_update.sh
+  bash ~/overcloud/deploy_overcloud_pre_update.sh
 
 Deploy (or update) with routed networks::
 
-  bash /home/stack/overcloud/deploy_overcloud.sh
+  bash ~/overcloud/deploy_overcloud.sh
