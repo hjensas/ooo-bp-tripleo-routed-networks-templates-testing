@@ -1,5 +1,7 @@
 parameter_defaults:
 
+  swap_size_megabytes: 8192
+
   # ROLE: Controller
   ControllerCount: 1
   OvercloudControlFlavor: control-leaf1

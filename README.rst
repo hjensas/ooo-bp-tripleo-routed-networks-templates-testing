@@ -125,3 +125,10 @@ Run Tempest tests on the overcloud
     compute-feature-enabled.console_output true \
     orchestration.stack_owner_role Member
 
+::
+
+  tempest cleanup --init-saved-state
+
+::
+
+  tempest run --smoke
