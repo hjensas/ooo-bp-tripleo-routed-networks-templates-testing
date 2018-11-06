@@ -173,6 +173,7 @@ resources:
               network_config:
               - type: interface
                 name: nic1
+                mtu: 1450
                 use_dhcp: false
                 dns_servers:
                   get_param: DnsServers
@@ -190,6 +191,7 @@ resources:
                           get_param: EC2MetadataIp
               - type: ovs_bridge
                 name: bridge_name
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -203,10 +205,12 @@ resources:
                 members:
                 - type: interface
                   name: nic2
+                  mtu: 1450
                   use_dhcp: false
                   primary: true
               - type: interface
                 name: nic3
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -216,6 +220,7 @@ resources:
                     - get_param: InternalApiInterfaceRoutes
               - type: interface
                 name: nic4
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -225,6 +230,7 @@ resources:
                     - get_param: StorageInterfaceRoutes
               - type: interface
                 name: nic5
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -234,6 +240,7 @@ resources:
                     - get_param: StorageMgmtInterfaceRoutes
               - type: ovs_bridge
                 name: br-tenant
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -244,6 +251,7 @@ resources:
                 members:
                 - type: interface
                   name: nic6
+                  mtu: 1450
                   use_dhcp: false
                   primary: true
 outputs:

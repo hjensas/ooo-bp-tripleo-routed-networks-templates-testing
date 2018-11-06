@@ -173,6 +173,7 @@ resources:
               network_config:
               - type: interface
                 name: nic1
+                mtu: 1450
                 use_dhcp: false
                 dns_servers:
                   get_param: DnsServers
@@ -193,6 +194,7 @@ resources:
                           get_param: ControlPlaneDefaultRoute
               - type: interface
                 name: nic4
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
@@ -202,6 +204,7 @@ resources:
                     - get_param: StorageInterfaceRoutes
               - type: interface
                 name: nic5
+                mtu: 1450
                 use_dhcp: false
                 addresses:
                 - ip_netmask:
