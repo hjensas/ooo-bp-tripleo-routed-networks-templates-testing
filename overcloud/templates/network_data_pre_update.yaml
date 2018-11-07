@@ -82,9 +82,6 @@
   ip_subnet: '10.0.0.0/24'
   allocation_pools: [{'start': '10.0.0.4', 'end': '10.0.0.99'}]
   gateway_ip: '10.0.0.254'
-  ipv6_subnet: '2001:db8:fd00:1000::/64'
-  ipv6_allocation_pools: [{'start': '2001:db8:fd00:1000::10', 'end': '2001:db8:fd00:1000:ffff:ffff:ffff:fffe'}]
-  gateway_ipv6: '2001:db8:fd00:1000::1'
 - name: InternalApi
   name_lower: internal_api
   vip: true
@@ -92,9 +89,6 @@
   ip_subnet: '172.17.0.0/24'
   allocation_pools: [{'start': '172.17.0.10', 'end': '172.17.0.250'}]
   gateway_ip: '172.17.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:1000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:1000::10', 'end': 'fd00:fd00:fd00:1000:ffff:ffff:ffff:fffe'}]
-  gateway_ipv6: 'fd00:fd00:fd00:1000::1'
 - name: Storage
   vip: true
   vlan: 20
@@ -102,17 +96,12 @@
   ip_subnet: '172.18.0.0/24'
   allocation_pools: [{'start': '172.18.0.10', 'end': '172.18.0.250'}]
   gateway_ip: '172.18.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:2000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:2000::10', 'end': 'fd00:fd00:fd00:2000:ffff:ffff:ffff:fffe'}]
 - name: StorageMgmt
   name_lower: storage_mgmt
   vip: true
   vlan: 30
   ip_subnet: '172.19.0.0/24'
   allocation_pools: [{'start': '172.19.0.10', 'end': '172.19.0.250'}]
-  gateway_ip: '172.19.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:3000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:3000::10', 'end': 'fd00:fd00:fd00:3000:ffff:ffff:ffff:fffe'}]
 - name: Tenant
   vip: false  # Tenant network does not use VIPs
   name_lower: tenant
@@ -120,9 +109,6 @@
   ip_subnet: '172.16.0.0/24'
   allocation_pools: [{'start': '172.16.0.10', 'end': '172.16.0.250'}]
   gateway_ip: '172.16.0.254'
-  # Note that tenant tunneling is only compatible with IPv4 addressing at this time.
-  ipv6_subnet: 'fd00:fd00:fd00:4000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:4000::10', 'end': 'fd00:fd00:fd00:4000:ffff:ffff:ffff:fffe'}]
 - name: Management
   # Management network is enabled by default for backwards-compatibility, but
   # is not included in any roles by default. Add to role definitions to use.

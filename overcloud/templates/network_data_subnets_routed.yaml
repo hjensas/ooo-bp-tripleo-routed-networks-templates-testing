@@ -82,9 +82,6 @@
   ip_subnet: '10.0.0.0/24'
   allocation_pools: [{'start': '10.0.0.4', 'end': '10.0.0.99'}]
   gateway_ip: '10.0.0.254'
-  ipv6_subnet: '2001:db8:fd00:1000::/64'
-  ipv6_allocation_pools: [{'start': '2001:db8:fd00:1000::10', 'end': '2001:db8:fd00:1000:ffff:ffff:ffff:fffe'}]
-  gateway_ipv6: '2001:db8:fd00:1000::1'
 - name: InternalApi
   name_lower: internal_api
   vip: true
@@ -92,26 +89,17 @@
   ip_subnet: '172.17.0.0/24'
   allocation_pools: [{'start': '172.17.0.10', 'end': '172.17.0.250'}]
   gateway_ip: '172.17.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:1000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:1000::10', 'end': 'fd00:fd00:fd00:1000:ffff:ffff:ffff:fffe'}]
-  gateway_ipv6: 'fd00:fd00:fd00:1000::1'
   subnets:
     internal_api_leaf1:
       vlan: 11
       ip_subnet: '172.17.1.0/24'
       allocation_pools: [{'start': '172.17.1.10', 'end': '172.17.1.250'}]
       gateway_ip: '172.17.1.254'
-      ipv6_subnet: 'fd00:fd00:fd00:1001::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:1001::10', 'end': 'fd00:fd00:fd00:1001:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:1001::1'
     internal_api_leaf2:
       vlan: 12
       ip_subnet: '172.17.2.0/24'
       allocation_pools: [{'start': '172.17.2.10', 'end': '172.17.2.250'}]
       gateway_ip: '172.17.2.254'
-      ipv6_subnet: 'fd00:fd00:fd00:1002::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:1002::10', 'end': 'fd00:fd00:fd00:1002:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:1002::1'
 - name: Storage
   vip: true
   vlan: 20
@@ -119,51 +107,34 @@
   ip_subnet: '172.18.0.0/24'
   allocation_pools: [{'start': '172.18.0.10', 'end': '172.18.0.250'}]
   gateway_ip: '172.18.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:2000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:2000::10', 'end': 'fd00:fd00:fd00:2000:ffff:ffff:ffff:fffe'}]
   subnets:
     storage_leaf1:
       vlan: 21
       ip_subnet: '172.18.1.0/24'
       allocation_pools: [{'start': '172.18.1.10', 'end': '172.18.1.250'}]
       gateway_ip: '172.18.1.254'
-      ipv6_subnet: 'fd00:fd00:fd00:2001::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:2001::10', 'end': 'fd00:fd00:fd00:2001:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:2001::1'
     storage_leaf2:
       vlan: 22
       ip_subnet: '172.18.2.0/24'
       allocation_pools: [{'start': '172.18.2.10', 'end': '172.18.2.250'}]
       gateway_ip: '172.18.2.254'
-      ipv6_subnet: 'fd00:fd00:fd00:2002::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:2002::10', 'end': 'fd00:fd00:fd00:2002:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:2002::1'
 - name: StorageMgmt
   name_lower: storage_mgmt
   vip: true
   vlan: 30
   ip_subnet: '172.19.0.0/24'
   allocation_pools: [{'start': '172.19.0.10', 'end': '172.19.0.250'}]
-  gateway_ip: '172.19.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:3000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:3000::10', 'end': 'fd00:fd00:fd00:3000:ffff:ffff:ffff:fffe'}]
   subnets:
     storage_mgmt_leaf1:
       vlan: 31
       ip_subnet: '172.19.1.0/24'
       allocation_pools: [{'start': '172.19.1.10', 'end': '172.19.1.250'}]
       gateway_ip: '172.19.1.254'
-      ipv6_subnet: 'fd00:fd00:fd00:3001::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:3001::10', 'end': 'fd00:fd00:fd00:3001:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:3001::1'
     storage_mgmt_leaf2:
       vlan: 32
       ip_subnet: '172.19.2.0/24'
       allocation_pools: [{'start': '172.19.2.10', 'end': '172.19.2.250'}]
       gateway_ip: '172.19.2.254'
-      ipv6_subnet: 'fd00:fd00:fd00:3002::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:3002::10', 'end': 'fd00:fd00:fd00:3002:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:3002::1'
 - name: Tenant
   vip: false  # Tenant network does not use VIPs
   name_lower: tenant
@@ -171,26 +142,17 @@
   ip_subnet: '172.16.0.0/24'
   allocation_pools: [{'start': '172.16.0.10', 'end': '172.16.0.250'}]
   gateway_ip: '172.16.0.254'
-  # Note that tenant tunneling is only compatible with IPv4 addressing at this time.
-  ipv6_subnet: 'fd00:fd00:fd00:4000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:4000::10', 'end': 'fd00:fd00:fd00:4000:ffff:ffff:ffff:fffe'}]
   subnets:
     tenant_leaf1:
       vlan: 41
       ip_subnet: '172.16.1.0/24'
       allocation_pools: [{'start': '172.16.1.10', 'end': '172.16.1.250'}]
       gateway_ip: '172.16.1.254'
-      ipv6_subnet: 'fd00:fd00:fd00:4001::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:4001::10', 'end': 'fd00:fd00:fd00:4001:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:4001::1'
     tenant_leaf2:
       vlan: 42
       ip_subnet: '172.16.2.0/24'
       allocation_pools: [{'start': '172.16.2.10', 'end': '172.16.2.250'}]
       gateway_ip: '172.16.2.254'
-      ipv6_subnet: 'fd00:fd00:fd00:4002::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:4002::10', 'end': 'fd00:fd00:fd00:4002:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:4002::1'
 - name: Management
   # Management network is enabled by default for backwards-compatibility, but
   # is not included in any roles by default. Add to role definitions to use.
