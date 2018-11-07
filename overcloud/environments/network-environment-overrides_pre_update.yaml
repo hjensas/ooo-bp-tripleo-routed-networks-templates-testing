@@ -10,6 +10,7 @@ parameter_defaults:
     NeutronNetworkType: vxlan
     NeutronNetworkVLANRanges: tenant:1000:2000
     NeutronTunnelTypes: vxlan
+    NeutronGlobalPhysnetMtu: 1450
 
     # NetworkDeploymentActions: ['CREATE','UPDATE']
 
