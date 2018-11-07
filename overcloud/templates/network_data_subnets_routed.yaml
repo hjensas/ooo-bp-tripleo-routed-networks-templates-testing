@@ -194,31 +194,4 @@
 - name: Management
   # Management network is enabled by default for backwards-compatibility, but
   # is not included in any roles by default. Add to role definitions to use.
-  enabled: true
-  vip: false  # Management network does not use VIPs
-  name_lower: management
-  vlan: 50
-  ip_subnet: '172.20.0.0/24'
-  allocation_pools: [{'start': '172.20.0.10', 'end': '172.20.0.250'}]
-  gateway_ip: '172.20.0.254'
-  ipv6_subnet: 'fd00:fd00:fd00:5000::/64'
-  ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:5000::10', 'end': 'fd00:fd00:fd00:5000:ffff:ffff:ffff:fffe'}]
-  subnets:
-    management_leaf1:
-      enabled: true
-      vlan: 51
-      ip_subnet: '172.20.1.0/24'
-      allocation_pools: [{'start': '172.20.1.10', 'end': '172.20.1.250'}]
-      gateway_ip: '172.20.1.254'
-      ipv6_subnet: 'fd00:fd00:fd00:5001::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:5001::10', 'end': 'fd00:fd00:fd00:5001:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:5001::1'
-    management_leaf2:
-      enabled: true
-      vlan: 52
-      ip_subnet: '172.20.2.0/24'
-      allocation_pools: [{'start': '172.20.2.10', 'end': '172.20.2.250'}]
-      gateway_ip: '172.20.2.254'
-      ipv6_subnet: 'fd00:fd00:fd00:5002::/64'
-      ipv6_allocation_pools: [{'start': 'fd00:fd00:fd00:5002::10', 'end': 'fd00:fd00:fd00:5002:ffff:ffff:ffff:fffe'}]
-      gateway_ipv6: 'fd00:fd00:fd00:5002::1'
+  enabled: false
