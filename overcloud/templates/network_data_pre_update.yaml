@@ -113,4 +113,5 @@
   # Management network is enabled by default for backwards-compatibility, but
   # is not included in any roles by default. Add to role definitions to use.
   enabled: false
+  name_lower: management
 
