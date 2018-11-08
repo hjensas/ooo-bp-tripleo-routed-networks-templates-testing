@@ -153,8 +153,3 @@
       ip_subnet: '172.16.2.0/24'
       allocation_pools: [{'start': '172.16.2.10', 'end': '172.16.2.250'}]
       gateway_ip: '172.16.2.254'
-- name: Management
-  # Management network is enabled by default for backwards-compatibility, but
-  # is not included in any roles by default. Add to role definitions to use.
-  enabled: false
-  name_lower: management
