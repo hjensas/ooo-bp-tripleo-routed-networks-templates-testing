@@ -41,16 +41,6 @@
       dest: "{{ ansible_env.HOME }}/tripleo-heat-templates"
       refspec: refs/changes/49/619649/2
       version: FETCH_HEAD
-  - name: Git checkout python-tripleoclient
-    git:
-      repo: git://git.openstack.org/openstack/python-tripleoclient
-      dest: "{{ ansible_env.HOME }}/python-tripleoclient"
-      refspec: refs/changes/87/613487/2
-      version: FETCH_HEAD
-  - name: Patch python-tripleoclient
-    become: yes
-    shell:
-      cp {{ ansible_env.HOME }}/python-tripleoclient/tripleoclient/v1/tripleo_deploy.py /usr/lib/python2.7/site-packages/tripleoclient/v1/tripleo_deploy.py
   - name: Create symlinks
     file:
       src: "{{ ansible_env.HOME }}/ooo-bp-tripleo-routed-networks-templates-testing/{{ item }}"
