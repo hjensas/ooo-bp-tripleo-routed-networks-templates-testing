@@ -39,7 +39,7 @@
     git:
       repo: git://git.openstack.org/openstack/tripleo-heat-templates
       dest: "{{ ansible_env.HOME }}/tripleo-heat-templates"
-      refspec: refs/changes/59/613459/7
+      refspec: refs/changes/49/619649/2
       version: FETCH_HEAD
   - name: Git checkout python-tripleoclient
     git:
