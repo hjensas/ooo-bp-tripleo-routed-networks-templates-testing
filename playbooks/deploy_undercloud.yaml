@@ -64,7 +64,7 @@
     register: build_images
   - name: Install Undercloud
     shell:
-      openstack undercloud install --templates /home/centos/tripleo-heat-templates
+      openstack undercloud install
   - name: Build image - check async task
     async_status:
       jid: "{{ build_images.ansible_job_id }}"
