@@ -39,7 +39,7 @@
     git:
       repo: git://git.openstack.org/openstack/tripleo-heat-templates
       dest: "{{ ansible_env.HOME }}/tripleo-heat-templates"
-      refspec: refs/changes/49/619649/2
+      refspec: refs/changes/49/619649/3
       version: FETCH_HEAD
   - name: Create symlinks
     file:
@@ -64,7 +64,7 @@
     register: build_images
   - name: Install Undercloud
     shell:
-      openstack undercloud install
+      openstack undercloud install --templates /home/centos/tripleo-heat-templates
   - name: Build image - check async task
     async_status:
       jid: "{{ build_images.ansible_job_id }}"
