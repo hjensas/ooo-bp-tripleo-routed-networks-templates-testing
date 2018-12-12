@@ -58,7 +58,6 @@ To deploy without routed networks first::
 Deploy (or update) with routed networks::
 
   bash ~/overcloud/deploy_overcloud.sh
-  bash /home/stack/overcloud/deploy_overcloud.sh
 
 Run Tempest tests on the overcloud
 ----------------------------------
