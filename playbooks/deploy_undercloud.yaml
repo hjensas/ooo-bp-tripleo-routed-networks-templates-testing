@@ -9,16 +9,18 @@
       echo "/opt/8GB.swap swap                                    swap    defaults 0 0" >> /etc/fstab
   - name: Set up public interface
     become: yes
-    shell: |
-      cat << EOF > /etc/sysconfig/network-scripts/ifcfg-eth2
-      NAME=eth2
-      DEVICE=eth2
-      BOOTPROTO=static
-      IPADDR={{ undercloud_public_ip }}
-      PREFIX=24
-      MTU=1450
-      EOF
-      ifup eth2
+    copy:
+      content: | 
+        NAME=eth2
+        DEVICE=eth2
+        BOOTPROTO=static
+        IPADDR={{ undercloud_public_ip }}
+        PREFIX=24
+        MTU=1450
+      dest: /etc/sysconfig/network-scripts/ifcfg-eth2
+  - name: Bring up public interface
+    become: yes
+    command: ifup eth2
   - name: Install tripleo repos rpm
     become: yes
     yum:
