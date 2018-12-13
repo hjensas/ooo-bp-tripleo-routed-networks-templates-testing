@@ -53,7 +53,7 @@
     git:
       repo: git://git.openstack.org/openstack/tripleo-heat-templates
       dest: "{{ ansible_env.HOME }}/tripleo-heat-templates"
-      refspec: refs/changes/49/619649/5
+      refspec: refs/changes/49/619649/7
       version: FETCH_HEAD
   - name: Create symlinks
     file:
