@@ -2,7 +2,7 @@
 ./bin/deploy.py \
 	--env env-routed-lab.yaml \
 	--quintupleo \
-	--env environments/all-networks-port-security.yaml \
+	--env environments/all-networks.yaml \
 	--env env-custom-registry.yaml \
 	--role env-role-leaf1.yaml \
 	--role env-role-leaf2.yaml
