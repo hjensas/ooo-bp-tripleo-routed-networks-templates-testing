@@ -82,6 +82,7 @@
   ip_subnet: '10.0.0.0/24'
   allocation_pools: [{'start': '10.0.0.4', 'end': '10.0.0.99'}]
   gateway_ip: '10.0.0.254'
+  mtu: 1450
 - name: InternalApi
   name_lower: internal_api
   vip: true
@@ -89,6 +90,7 @@
   ip_subnet: '172.17.0.0/24'
   allocation_pools: [{'start': '172.17.0.10', 'end': '172.17.0.250'}]
   gateway_ip: '172.17.0.254'
+  mtu: 1450
   subnets:
     internal_api_leaf1:
       vlan: 11
@@ -107,6 +109,7 @@
   ip_subnet: '172.18.0.0/24'
   allocation_pools: [{'start': '172.18.0.10', 'end': '172.18.0.250'}]
   gateway_ip: '172.18.0.254'
+  mtu: 1450
   subnets:
     storage_leaf1:
       vlan: 21
@@ -124,6 +127,7 @@
   vlan: 30
   ip_subnet: '172.19.0.0/24'
   allocation_pools: [{'start': '172.19.0.10', 'end': '172.19.0.250'}]
+  mtu: 1450
   subnets:
     storage_mgmt_leaf1:
       vlan: 31
@@ -142,6 +146,7 @@
   ip_subnet: '172.16.0.0/24'
   allocation_pools: [{'start': '172.16.0.10', 'end': '172.16.0.250'}]
   gateway_ip: '172.16.0.254'
+  mtu: 1450
   subnets:
     tenant_leaf1:
       vlan: 41
@@ -153,3 +158,4 @@
       ip_subnet: '172.16.2.0/24'
       allocation_pools: [{'start': '172.16.2.10', 'end': '172.16.2.250'}]
       gateway_ip: '172.16.2.254'
+
