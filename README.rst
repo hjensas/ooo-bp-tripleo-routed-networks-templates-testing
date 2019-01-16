@@ -9,7 +9,7 @@ Set up OVB environment
   mkdir ~/ovb-lab
   virtualenv ~/ovb-lab
   source ~/ovb-lab/bin/activate
-  git clone https://github.com/cybertron/openstack-virtual-baremetal.git ~/ovb-lab/openstack-virtual-baremetal
+  git clone https://git.openstack.org/openstack/openstack-virtual-baremetal ~/ovb-lab/openstack-virtual-baremetal
   pip install ~/ovb-lab/openstack-virtual-baremetal
   pip install python-openstackclient
   pip install ansible
