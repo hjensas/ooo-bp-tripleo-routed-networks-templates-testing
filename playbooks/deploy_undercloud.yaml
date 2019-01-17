@@ -102,4 +102,4 @@
   - name: Create flavors and set node capabilities
     shell: |
       source {{ ansible_env.HOME }}/stackrc
-      bash {{ ansible_env.HOME }}/overcloud/set_capabilities
+      bash {{ ansible_env.HOME }}/set_capabilities.sh

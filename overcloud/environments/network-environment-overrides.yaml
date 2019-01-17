@@ -10,16 +10,6 @@ parameter_defaults:
     NeutronNetworkType: vxlan
     NeutronNetworkVLANRanges: tenant:1000:2000
     NeutronTunnelTypes: vxlan
-    NeutronGlobalPhysnetMtu: 1450
 
     NetworkDeploymentActions: ['CREATE','UPDATE']
 
-# resource_registry:
-    # Controller Nodes
-    # OS::TripleO::Controller::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/controller.yaml
-    # OS::TripleO::Controller::Net::SoftwareConfig: /home/centos/overcloud/templates/controller.yaml
-    # Compute Nodes
-    # OS::TripleO::Compute::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
-    # OS::TripleO::Compute::Net::SoftwareConfig: /home/centos/overcloud/templates/compute.yaml
-    # OS::TripleO::ComputeLeaf1::Net::SoftwareConfig: /home/centos/tripleo-heat-templates/network/config/multiple-nics/compute.yaml
-    # OS::TripleO::ComputeLeaf1::Net::SoftwareConfig: /home/centos/overcloud/templates/compute.yaml
