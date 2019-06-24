@@ -51,7 +51,7 @@
       dest: "{{ ansible_env.HOME }}/ooo-bp-tripleo-routed-networks-templates-testing"
   - name: Git checkout tripleo-heat-templates
     git:
-      repo: git://git.openstack.org/openstack/tripleo-heat-templates
+      repo: https://opendev.org/openstack/tripleo-heat-templates.git
       dest: "{{ ansible_env.HOME }}/tripleo-heat-templates"
       # refspec: refs/changes/49/619649/10
       # version: FETCH_HEAD
@@ -103,3 +103,4 @@
     shell: |
       source {{ ansible_env.HOME }}/stackrc
       bash {{ ansible_env.HOME }}/set_capabilities.sh
+
