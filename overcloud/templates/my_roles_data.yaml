@@ -46,6 +46,7 @@
     - OS::TripleO::Services::BarbicanBackendDogtag
     - OS::TripleO::Services::BarbicanBackendKmip
     - OS::TripleO::Services::BarbicanBackendPkcs11Crypto
+    - OS::TripleO::Services::BootParams
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CeilometerAgentCentral
     - OS::TripleO::Services::CeilometerAgentNotification
@@ -64,6 +65,7 @@
     - OS::TripleO::Services::CinderBackendDellEMCVNX
     - OS::TripleO::Services::CinderBackendDellEMCXTREMIOISCSI
     - OS::TripleO::Services::CinderBackendNetApp
+    - OS::TripleO::Services::CinderBackendPure
     - OS::TripleO::Services::CinderBackendScaleIO
     - OS::TripleO::Services::CinderBackendVRTSHyperScale
     - OS::TripleO::Services::CinderBackendNVMeOF
@@ -95,6 +97,7 @@
     - OS::TripleO::Services::HeatApiCfn
     - OS::TripleO::Services::HeatEngine
     - OS::TripleO::Services::Horizon
+    - OS::TripleO::Services::IpaClient
     - OS::TripleO::Services::Ipsec
     - OS::TripleO::Services::IronicApi
     - OS::TripleO::Services::IronicConductor
@@ -141,7 +144,6 @@
     - OS::TripleO::Services::NovaConductor
     - OS::TripleO::Services::NovaIronic
     - OS::TripleO::Services::NovaMetadata
-    - OS::TripleO::Services::NovaPlacement
     - OS::TripleO::Services::NovaScheduler
     - OS::TripleO::Services::NovaVncProxy
     - OS::TripleO::Services::ContainersLogrotateCrond
@@ -152,10 +154,12 @@
     - OS::TripleO::Services::OctaviaWorker
     - OS::TripleO::Services::OpenDaylightApi
     - OS::TripleO::Services::OpenDaylightOvs
+    - OS::TripleO::Services::OpenStackClients
     - OS::TripleO::Services::OVNDBs
     - OS::TripleO::Services::OVNController
     - OS::TripleO::Services::Pacemaker
     - OS::TripleO::Services::PankoApi
+    - OS::TripleO::Services::PlacementApi
     - OS::TripleO::Services::OsloMessagingRpc
     - OS::TripleO::Services::OsloMessagingNotify
     - OS::TripleO::Services::Podman
@@ -182,7 +186,6 @@
     - OS::TripleO::Services::Tuned
     - OS::TripleO::Services::Vpp
     - OS::TripleO::Services::Zaqar
-    - OS::TripleO::Services::Xinetd
 ###############################################################################
 # Role: Compute                                                               #
 ###############################################################################
@@ -213,6 +216,7 @@
   ServicesDefault:
     - OS::TripleO::Services::Aide
     - OS::TripleO::Services::AuditD
+    - OS::TripleO::Services::BootParams
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CephClient
     - OS::TripleO::Services::CephExternal
@@ -225,6 +229,7 @@
     - OS::TripleO::Services::ComputeNeutronOvsAgent
     - OS::TripleO::Services::Docker
     - OS::TripleO::Services::Fluentd
+    - OS::TripleO::Services::IpaClient
     - OS::TripleO::Services::Ipsec
     - OS::TripleO::Services::Iscsid
     - OS::TripleO::Services::Kernel
@@ -276,6 +281,7 @@
   ServicesDefault:
     - OS::TripleO::Services::Aide
     - OS::TripleO::Services::AuditD
+    - OS::TripleO::Services::BootParams
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CephClient
     - OS::TripleO::Services::CephExternal
@@ -288,6 +294,7 @@
     - OS::TripleO::Services::ComputeNeutronOvsAgent
     - OS::TripleO::Services::Docker
     - OS::TripleO::Services::Fluentd
+    - OS::TripleO::Services::IpaClient
     - OS::TripleO::Services::Ipsec
     - OS::TripleO::Services::Iscsid
     - OS::TripleO::Services::Kernel
@@ -337,12 +344,14 @@
   ServicesDefault:
     - OS::TripleO::Services::Aide
     - OS::TripleO::Services::AuditD
+    - OS::TripleO::Services::BootParams
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CephOSD
     - OS::TripleO::Services::CertmongerUser
     - OS::TripleO::Services::Collectd
     - OS::TripleO::Services::Docker
     - OS::TripleO::Services::Fluentd
+    - OS::TripleO::Services::IpaClient
     - OS::TripleO::Services::Ipsec
     - OS::TripleO::Services::Kernel
     - OS::TripleO::Services::LoginDefs
