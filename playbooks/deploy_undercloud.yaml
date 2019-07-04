@@ -24,7 +24,7 @@
   - name: Install tripleo repos rpm
     become: yes
     yum:
-      name: https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20190612102512.9b3187e.el7.noarch.rpm 
+      name: https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20190626123453.5ed935f.el7.noarch.rpm 
       state: present
   - name: Set up tripleo repos
     become: yes
