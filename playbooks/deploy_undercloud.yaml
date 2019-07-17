@@ -21,20 +21,6 @@
   - name: Bring up public interface
     become: yes
     command: ifup eth2
-  - name: Install tripleo repos rpm
-    become: yes
-    yum:
-      name: https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20190626123453.5ed935f.el7.noarch.rpm 
-      state: present
-  - name: Set up tripleo repos
-    become: yes
-    shell:
-      tripleo-repos current-tripleo-dev
-  - name: upgrade all packages
-    become: yes
-    yum:
-      name: '*'
-      state: latest
   - name: Install packages
     become: yes
     yum:
@@ -44,6 +30,30 @@
         - git
         - tmux
         - vim-enhanced
+  - name: Git checkout tripleo-repos
+    git:
+      repo: https://opendev.org/openstack/tripleo-repos.git
+      dest: "{{ ansible_env.HOME }}/tripleo-repos"
+  - name: Install tripleo repos rpm
+    become: yes
+    shell: |
+      cd {{ ansible_env.HOME }}/tripleo-repos
+      python setup.py install
+  - name: Set up tripleo repos
+    become: yes
+    shell:
+      tripleo-repos current-tripleo-dev
+  - name: upgrade all packages
+    become: yes
+    yum:
+      name: '*'
+      state: latest
+  - name: Install tripleo client
+    become: yes
+    yum:
+      name: "{{ packages }}"
+    vars:
+      packages:
         - python-tripleoclient
   - name: Git checkout ooo-bp-tripleo-routed-networks-templates-testing
     git:
