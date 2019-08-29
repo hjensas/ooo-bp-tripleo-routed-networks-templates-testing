@@ -4,7 +4,7 @@ parameter_defaults:
 
   # ROLE: Controller
   ControllerCount: 1
-  OvercloudControlFlavor: control-leaf1
+  OvercloudControllerFlavor: control-leaf1
   ControllerControlPlaneSubnet: ctlplane-leaf1
 
   # ROLE: Compute
