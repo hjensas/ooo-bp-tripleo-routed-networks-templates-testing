@@ -83,19 +83,19 @@
       cd {{ ansible_env.HOME }}/images
       export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
       openstack overcloud image build
-    async: 1800
-    poll: 0
-    register: build_images
+    # async: 1800
+    # poll: 0
+    # register: build_images
   - name: Install Undercloud
     shell:
       openstack undercloud install
-  - name: Build image - check async task
-    async_status:
-      jid: "{{ build_images.ansible_job_id }}"
-    register: build_image_result
-    until: build_image_result.finished
-    retries: 100
-    delay: 10
+  # - name: Build image - check async task
+  #   async_status:
+  #     jid: "{{ build_images.ansible_job_id }}"
+  #   register: build_image_result
+  #   until: build_image_result.finished
+  #   retries: 100
+  #   delay: 10
   - name: Upload overcloud images
     shell: |
       source {{ ansible_env.HOME }}/stackrc
