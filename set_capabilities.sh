@@ -1,4 +1,4 @@
-source /home/stack/stackrc
+source ~/stackrc
 
 openstack flavor create \
   --disk 40 --public --ram 4096 --vcpus 1 --rxtx-factor 1.0 \
