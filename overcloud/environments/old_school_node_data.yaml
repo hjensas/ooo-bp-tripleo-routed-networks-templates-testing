@@ -11,11 +11,15 @@ parameter_defaults:
   ComputeCount: 1
   OvercloudComputeFlavor: compute-leaf1
   ComputeControlPlaneSubnet: ctlplane-leaf1
+  ComputeParameters:
+    NovaEnableRbdBackend: true
 
   # Compute2
   Compute2Count: 1
   OvercloudCompute2Flavor: compute-leaf2
   Compute2ControlPlaneSubnet: ctlplane-leaf2
+  Compute2Parameters:
+    NovaEnableRbdBackend: true
  
   Compute2ExtraConfig:
     nova::compute::libvirt::vncserver_listen: "%{hiera('internal_api2')}"
@@ -26,6 +30,16 @@ parameter_defaults:
     nova::migration::libvirt::live_migration_inbound_addr: "%{hiera('internal_api2')}"
     nova::my_ip: "%{hiera('internal_api2')}"
 
+  # CephStorage
+  CephStorageCount: 1
+  OvercloudCephStorageFlavor: ceph-leaf2
+  CephStorageControlPlaneSubnet: ctlplane-leaf2
+  CephPoolDefaultSize: 1
+  CephAnsibleExtraConfig:
+    public_network: '172.18.0.0/24,172.18.1.0/24'
+    cluster_network: '172.19.0.0/24,172.19.1.0/24'
+
   ServiceNetMap:
     Compute2HostnameResolveNetwork: internal_api2
+    CephHostnameResolveNetwork: storage2
 

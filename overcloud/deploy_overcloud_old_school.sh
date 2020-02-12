@@ -11,6 +11,7 @@ openstack overcloud deploy --templates /home/centos/tripleo-heat-templates \
   -e /home/centos/tripleo-heat-templates/environments/network-isolation.yaml \
   -e /home/centos/tripleo-heat-templates/environments/network-environment.yaml \
   -e /home/centos/overcloud/nic-configs/net-multiple-nics.yaml \
+  -e /home/centos/tripleo-heat-templates/environments/ceph-ansible/ceph-ansible.yaml \
   -e /home/centos/overcloud/environments/network-environment-overrides.yaml
 
 
